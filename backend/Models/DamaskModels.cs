@@ -68,4 +68,44 @@ namespace Damask.Models
         [Column("timePunch")]
         public DateTime TimePunch { get; set; }
     }
+
+    [Table("userInfo", Schema = "payroll")]
+    public class UserInfo
+    {
+        [Key]
+        [Column("userID", TypeName = "nvarchar(64)")]
+        public string UserId { get; set; }
+
+        [Column("firstName", TypeName = "nvarchar(20)")]
+        public string FirstName { get; set; }
+
+        [Column("middleName", TypeName = "nvarchar(20)")]
+        public string MiddleName { get; set; }
+
+        [Column("lastName", TypeName = "nvarchar(20)")]
+        public string LastName { get; set; }
+
+        [Column("SSN", TypeName = "nvarchar(9)")]
+        public string Ssn { get; set; }
+
+        [Column("DOB", TypeName = "date")]
+        public DateTime Dob { get; set; }
+
+        [Column("routingNum", TypeName = "nvarchar(9)")]
+        public string RoutingNumber { get; set; }
+
+        [Column("accountNum", TypeName = "nvarchar(20)")]
+        public string AccountNumber { get; set; }
+
+        [Column("streetAddress", TypeName = "nvarchar(30)")]
+        public string StreetAddress { get; set; }
+
+        [Column("State", TypeName = "nvarchar(2)")]
+        public string State { get; set; }
+
+        [Column("zipcode", TypeName = "nvarchar(5)")]
+        public string ZipCode { get; set; }
+
+        public bool IsAdmin { get; set; }
+    }
 }
