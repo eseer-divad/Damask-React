@@ -110,7 +110,6 @@ namespace Damask.Models
     }
 
     // Equivalent to the Django "LoginToken" model
-    // not sure abt this one
     [Table("LoginToken", Schema = "payroll")]
     public class LoginToken
     {
