@@ -33,4 +33,25 @@ namespace Damask.Models
 
         public bool? Approval { get; set; }
     }
+
+    [Table("employeeInfo", Schema = "payroll")]
+    public class EmployeeInfo
+    {
+        [Key]
+        [Column("EmployeeID", TypeName = "nvarchar(64)")]
+        public string EmployeeId { get; set; }
+
+        [Column("UserID", TypeName = "nvarchar(64)")]
+        public string UserId { get; set; }
+
+        public bool Salary { get; set; }
+        public bool Prorate { get; set; }
+        public bool Exempt { get; set; }
+
+        [Column(TypeName = "decimal(19, 4)")]
+        public decimal Wage { get; set; }
+
+        public float OvertimeDiff { get; set; }
+        public float PTO { get; set; }
+    }
 }
