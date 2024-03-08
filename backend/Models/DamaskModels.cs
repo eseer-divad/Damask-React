@@ -54,4 +54,18 @@ namespace Damask.Models
         public float OvertimeDiff { get; set; }
         public float PTO { get; set; }
     }
+
+    [Table("timeClock", Schema = "payroll")]
+    public class TimeClock
+    {
+        [Key]
+        [Column("punchID", TypeName = "nvarchar(64)")]
+        public string PunchId { get; set; }
+
+        [Column("employeeID", TypeName = "nvarchar(64)")]
+        public string EmployeeId { get; set; }
+
+        [Column("timePunch")]
+        public DateTime TimePunch { get; set; }
+    }
 }
