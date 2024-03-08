@@ -108,4 +108,22 @@ namespace Damask.Models
 
         public bool IsAdmin { get; set; }
     }
+
+    // Equivalent to the Django "LoginToken" model
+    // not sure abt this one
+    [Table("LoginToken", Schema = "payroll")]
+    public class LoginToken
+    {
+        [Key]
+        [Column(TypeName = "nvarchar(40)")]
+        public string Key { get; set; }
+
+        [ForeignKey("UserId")]
+        public UserInfo User { get; set; }
+
+        [Column(TypeName = "nvarchar(255)")]
+        public string AdditionalInfo { get; set; }
+
+        public DateTime ExpirationDate { get; set; }
+    }
 }
