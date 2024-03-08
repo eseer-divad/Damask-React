@@ -17,4 +17,20 @@ namespace Damask.Models
         [Column("username", TypeName = "nvarchar(20)")]
         public string Username { get; set; }
     }
+
+    [Table("PTO_requests", Schema = "payroll")]
+    public class PtoRequest
+    {
+        [Key]
+        [Column("RequestID", TypeName = "nvarchar(64)")]
+        public string RequestId { get; set; }
+
+        [Column("employeeID", TypeName = "nvarchar(64)")]
+        public string EmployeeId { get; set; }
+
+        [Column("rDate", TypeName = "date")]
+        public DateTime RequestDate { get; set; }
+
+        public bool? Approval { get; set; }
+    }
 }
